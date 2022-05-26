@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  @apply flex w-screen h-full;
+}
+
+.app__background {
+  @apply flex w-screen h-[55rem] md:h-[125%] absolute;
+}
+
+.app__background svg {
+  @apply z-40 flex w-72 h-72 top-[32.5rem] left-24 md:top-36 md:left-96 absolute;
+}
+
+.app__main {
+  @apply flex w-full h-full;
+}
+
+.app__title {
+  @apply top-24 left-12 md:top-40 md:left-24 text-[#ccf381] text-5xl lg:text-6xl font-bold absolute;
+}
+
+.app__description_one {
+  @apply text-white top-64 left-12 md:text-base md:top-72 md:left-24 absolute
+}
+
+.app__description_two {
+  @apply text-xs text-[#ccf381] top-96 left-12 md:top-96 md:left-24 absolute;
+}
+
+.app__description_three {
+  @apply text-xs text-[#ccf381] top-96 left-60 md:top-96 md:left-72 absolute;
+}
+
+.app__title .dot {
+  @apply text-white p-0 m-0 tracking-tight;
+}
+
+.app__section_one {
+  @apply w-full h-[50rem] md:h-[125%];
+}
+
+.app__section_two {
+  @apply text-[#F9F9F9] mt-[58rem] w-full h-[40rem] absolute;
+}
+
+.app__avatar {
+  @apply flex z-50 w-56 h-56 md:w-1/5 md:h-1/3 top-[33rem] right-28 md:right-64 md:top-40 absolute
+}
+
+.app__avatar_figure {
+  @apply flex w-56 h-56 md:w-1/5 md:h-1/3 right-20 top-[35rem] md:right-56 md:top-48 border-2 border-white absolute
+}
+
+.app__section_two__title_one {
+  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12
+}
+
+.app__section_two__description_one {
+  @apply text-gray-500 text-xs lg:text-base m-12
+}
+
+.app__section_two__title_two {
+  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12
+}
+
+.app__section_two__description_two {
+  @apply text-gray-500 text-xs lg:text-base m-12
+}
+
+.app__section_three {
+  @apply flex w-screen h-screen mt-[98rem] bg-[#4831d4] absolute
+}
+
+.app__section_three__title {
+  @apply text-[#ccf381] text-4xl lg:text-5xl font-bold m-12
+}
+
+.app__section_three__description_three {
+  @apply text-white text-xs top-[10rem] left-16 absolute text-center
+}
+
+@media (max-width: 768px) {
+  .app__background {
+    background: linear-gradient(-180deg, #4831d4 56%, #ccf381 56%);
+  }
+}
+
+@media  (min-width: 768px) {
+  .app__background {
+    background: linear-gradient(90deg, #4831d4 67%, #ccf381 33%);
+  }
+}
