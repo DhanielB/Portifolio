@@ -46,7 +46,7 @@ export default function App() {
         <section className="app__section_one">
           <img
             className="app__avatar"
-            src="https://olaolu.dev/img/handsome.png"
+            src="https://avatars.githubusercontent.com/u/82909711?v=4"
             alt="avatar"
           />
           <figure className="app__avatar_figure"></figure>
