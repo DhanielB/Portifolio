@@ -17,7 +17,7 @@ export default function App() {
     });
     gsap.to(titleRef.current, {
       y: 0,
-      duration: 10,
+      duration: 5,
       autoAlpha: 1,
       delay: 10,
     });
@@ -29,7 +29,7 @@ export default function App() {
     });
     gsap.to(subtitleRef.current, {
       y: 0,
-      duration: 10,
+      duration: 5,
       autoAlpha: 1,
       delay: 20,
     });
@@ -41,7 +41,7 @@ export default function App() {
     });
     gsap.to(descriptionOneRef.current, {
       y: 0,
-      duration: 10,
+      duration: 5,
       autoAlpha: 1,
       delay: 30,
     });
@@ -53,7 +53,7 @@ export default function App() {
     });
     gsap.to(descriptionTwoRef.current, {
       y: 0,
-      duration: 10,
+      duration: 5,
       autoAlpha: 1,
       delay: 40,
     });
@@ -65,9 +65,9 @@ export default function App() {
     });
     gsap.to(descriptionThreeRef.current, {
       y: 0,
-      duration: 10,
+      duration: 5,
       autoAlpha: 1,
-      delay: 40,
+      delay: 50,
     });
   }, []);
 
