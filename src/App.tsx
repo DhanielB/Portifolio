@@ -16,9 +16,9 @@ export default function App() {
     });
     gsap.to(titleRef.current, {
       y: 0,
-      duration: 5,
+      duration: 10,
       autoAlpha: 1,
-      delay: 1,
+      delay: 10,
     });
 
     gsap.from(subtitleRef.current, {
@@ -27,9 +27,9 @@ export default function App() {
     });
     gsap.to(subtitleRef.current, {
       y: 0,
-      duration: 5,
+      duration: 10,
       autoAlpha: 1,
-      delay: 2,
+      delay: 20,
     });
 
     gsap.from(descriptionOneRef.current, {
@@ -38,9 +38,9 @@ export default function App() {
     });
     gsap.to(descriptionOneRef.current, {
       y: 0,
-      duration: 5,
+      duration: 10,
       autoAlpha: 1,
-      delay: 3,
+      delay: 30,
     });
 
     gsap.from(descriptionTwoRef.current, {
@@ -49,9 +49,9 @@ export default function App() {
     });
     gsap.to(descriptionTwoRef.current, {
       y: 0,
-      duration: 5,
+      duration: 10,
       autoAlpha: 1,
-      delay: 4,
+      delay: 40,
     });
 
     gsap.from(descriptionThreeRef.current, {
@@ -60,9 +60,9 @@ export default function App() {
     });
     gsap.to(descriptionThreeRef.current, {
       y: 0,
-      duration: 5,
+      duration: 10,
       autoAlpha: 1,
-      delay: 4,
+      delay: 40,
     });
   }, []);
 
