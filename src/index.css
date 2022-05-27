@@ -4,7 +4,6 @@
 
 * {
   box-sizing: border-box;
-  @apply hover:break-all hover:text-pink-800
 }
 
 .app {
@@ -84,7 +83,7 @@
 }
 
 .app__section_three__description_three {
-  @apply text-white text-xs top-[10rem] left-16 absolute text-center
+  @apply text-white text-xs top-[10rem] left-16 absolute
 }
 
 @media (max-width: 768px) {
