@@ -4,7 +4,7 @@
 
 * {
   box-sizing: border-box;
-  @apply break-all
+  @apply break-words
 }
 
 .app {
