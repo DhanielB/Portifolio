@@ -12,6 +12,7 @@ export default function App() {
   useEffect(() => {
     gsap.from(titleRef.current, {
       y: -5,
+      duration: 10,
       autoAlpha: 0,
     });
     gsap.to(titleRef.current, {
@@ -23,6 +24,7 @@ export default function App() {
 
     gsap.from(subtitleRef.current, {
       y: -5,
+      duration: 10,
       autoAlpha: 0,
     });
     gsap.to(subtitleRef.current, {
@@ -34,6 +36,7 @@ export default function App() {
 
     gsap.from(descriptionOneRef.current, {
       y: -5,
+      duration: 10,
       autoAlpha: 0,
     });
     gsap.to(descriptionOneRef.current, {
@@ -45,6 +48,7 @@ export default function App() {
 
     gsap.from(descriptionTwoRef.current, {
       y: -5,
+      duration: 10,
       autoAlpha: 0,
     });
     gsap.to(descriptionTwoRef.current, {
@@ -56,6 +60,7 @@ export default function App() {
 
     gsap.from(descriptionThreeRef.current, {
       y: -5,
+      duration: 10,
       autoAlpha: 0,
     });
     gsap.to(descriptionThreeRef.current, {
