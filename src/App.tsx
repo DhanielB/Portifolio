@@ -1,3 +1,5 @@
+import user from './images/user.png'
+
 export default function App() {
   return (
     <div className="app">
@@ -46,7 +48,7 @@ export default function App() {
         <section className="app__section_one">
           <img
             className="app__avatar"
-            src="images/user.png"
+            src={user}
             alt="avatar"
           />
           <figure className="app__avatar_figure"></figure>
