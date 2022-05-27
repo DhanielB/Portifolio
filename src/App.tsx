@@ -61,50 +61,50 @@ export default function App() {
 
           <div className="app__description">
             <h1 className="app__description_one">
-              I like to craft solid and scalable backends products with
+              I like to craft solid and scalable backends products<br></br> with
               great user experiences.
             </h1>
 
             <h1 className="app__description_two">
-              Highly skilled at progressive enhancement, design systems
-              &amp; UI Engineering.
+              Highly skilled at progressive<br></br> enhancement, design systems
+              &amp; <br></br>UI Engineering.
             </h1>
 
             <h1 className="app__description_three">
-              Over a decade of experience building products for clients
-              across several countries.
+              Over a decade of experience<br></br> building products for clients
+              <br></br> across several countries.
             </h1>
           </div>
         </section>
         <section className="app__section_two">
           <h1 className="app__section_two__title_one">Design</h1>
           <p className="app__section_two__description_one">
-            I'm probably not the typical designer positioned
-            behind an Illustrator artboard adjusting pixels, but I
-            design. Immersed in stylesheets tweaking font sizes and
-            contemplating layouts is where you'll find me (~_^). I'm
-            committed to creating fluent user
+            I'm probably not the typical designer positioned<br></br>
+            behind an Illustrator artboard adjusting pixels, but I<br></br>
+            design. Immersed in stylesheets tweaking font sizes<br></br> and
+            contemplating layouts is where you'll find me<br></br> (~_^). I'm
+            committed to creating fluent user<br></br>
             experiences while staying fashionable.
           </p>
 
           <h1 className="app__section_two__title_two">Engeneering</h1>
           <p className="app__section_two__description_two">
             In building JavaScript applications, I'm equipped with just the
-             right tools, and can absolutely function independently of
-            them to deliver fast, resilient solutions optimized for
-            scale — performance and scalabilty are priorities on my
+            <br></br> right tools, and can absolutely function independently of
+            them<br></br> to deliver fast, resilient solutions optimized for
+            scale —<br></br> performance and scalabilty are priorities on my
             radar.
           </p>
         </section>
         <section className="app__section_three">
           <h1 className="app__section_three__title">
-            Over the past 1 year,
+            Over the<br></br> past 1 year,
           </h1>
 
           <p className="app__section_three__description_three">
-            I've built products for companies and businesses around the
-            globe ranging from marketing websites to complex solutions
-            and enterprise apps with focus on fast, elegant and
+            I've built products for companies and businesses<br></br> around the
+            globe ranging from marketing websites<br></br> to complex solutions
+            and enterprise apps with focus<br></br> on fast, elegant and
             accessible user experiences.
           </p>
         </section>
