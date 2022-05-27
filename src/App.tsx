@@ -1,6 +1,71 @@
-import user from './images/user.png'
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
+import user from "./images/user.png";
 
 export default function App() {
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const descriptionOneRef = useRef(null);
+  const descriptionTwoRef = useRef(null);
+  const descriptionThreeRef = useRef(null);
+
+  useEffect(() => {
+    gsap.from(titleRef.current, {
+      y: -5,
+      autoAlpha: 0,
+    });
+    gsap.to(titleRef.current, {
+      y: 0,
+      duration: 1,
+      autoAlpha: 1,
+      delay: 1,
+    });
+
+    gsap.from(subtitleRef.current, {
+      y: -5,
+      autoAlpha: 0,
+    });
+    gsap.to(subtitleRef.current, {
+      y: 0,
+      duration: 1,
+      autoAlpha: 1,
+      delay: 2,
+    });
+
+    gsap.from(descriptionOneRef.current, {
+      y: -5,
+      autoAlpha: 0,
+    });
+    gsap.to(descriptionOneRef.current, {
+      y: 0,
+      duration: 1,
+      autoAlpha: 1,
+      delay: 3,
+    });
+
+    gsap.from(descriptionTwoRef.current, {
+      y: -5,
+      autoAlpha: 0,
+    });
+    gsap.to(descriptionTwoRef.current, {
+      y: 0,
+      duration: 1,
+      autoAlpha: 1,
+      delay: 4,
+    });
+
+    gsap.from(descriptionThreeRef.current, {
+      y: -5,
+      autoAlpha: 0,
+    });
+    gsap.to(descriptionThreeRef.current, {
+      y: 0,
+      duration: 1,
+      autoAlpha: 1,
+      delay: 4,
+    });
+  }, []);
+
   return (
     <div className="app">
       <div className="app__background">
@@ -46,31 +111,27 @@ export default function App() {
 
       <main className="app__main">
         <section className="app__section_one">
-          <img
-            className="app__avatar"
-            src={user}
-            alt="avatar"
-          />
+          <img className="app__avatar" src={user} alt="avatar" />
           <figure className="app__avatar_figure"></figure>
           <div className="app__title">
-            <h1>Backend</h1>
-            <h1>
+            <h1 ref={titleRef}>Backend</h1>
+            <h1 ref={subtitleRef}>
               Developer<span className="dot">.</span>
             </h1>
           </div>
 
           <div className="app__description">
-            <h1 className="app__description_one">
+            <h1 ref={descriptionOneRef} className="app__description_one">
               I like to craft solid and scalable backends products<br></br> with
               great user experiences.
             </h1>
 
-            <h1 className="app__description_two">
+            <h1 ref={descriptionTwoRef} className="app__description_two">
               Highly skilled at progressive<br></br> enhancement, design systems
               &amp; <br></br>UI Engineering.
             </h1>
 
-            <h1 className="app__description_three">
+            <h1 ref={descriptionThreeRef} className="app__description_three">
               Over a decade of experience<br></br> building products for clients
               <br></br> across several countries.
             </h1>
@@ -95,13 +156,19 @@ export default function App() {
             scale —<br></br> performance and scalabilty are priorities on my
             radar.
           </p>
+          <p className="app__section_three__description_three">
+            Currently, I work at Shopify as a Senior UX Developer<br></br> and
+            Accessibility advocate crafting thoughtful and<br></br> inclusive
+            experiences that adhere to web standards<br></br> for over a million
+            merchants across the world.
+          </p>
         </section>
         <section className="app__section_three">
           <h1 className="app__section_three__title">
             Over the<br></br> past 1 year,
           </h1>
 
-          <p className="app__section_three__description_three">
+          <p className="app__section_three__description_one">
             I've built products for companies and businesses<br></br> around the
             globe ranging from marketing websites<br></br> to complex solutions
             and enterprise apps with focus<br></br> on fast, elegant and

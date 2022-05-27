@@ -11,7 +11,7 @@
 }
 
 .app__background {
-  @apply flex w-screen h-[55rem] md:h-[125%] absolute;
+  @apply flex w-full h-[55rem] md:h-[125%] absolute;
 }
 
 .app__background svg {
@@ -47,11 +47,11 @@
 }
 
 .app__section_two {
-  @apply text-[#F9F9F9] mt-[58rem] w-full h-[40rem] absolute;
+  @apply bg-[#F9F9F9] mt-[55rem] w-full h-[40rem] absolute;
 }
 
 .app__avatar {
-  @apply flex z-50 w-56 h-56 md:w-1/5 md:h-1/3 top-[33rem] right-28 md:right-64 md:top-40 absolute
+  @apply flex z-50 w-56 h-56 md:w-[21.5%] md:h-1/3 top-[33rem] right-28 md:right-64 md:top-40 absolute
 }
 
 .app__avatar_figure {
@@ -67,23 +67,27 @@
 }
 
 .app__section_two__title_two {
-  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12
+  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12 md:ml-[32rem]
 }
 
 .app__section_two__description_two {
-  @apply text-gray-500 text-xs lg:text-base m-12
+  @apply text-gray-500 text-xs lg:text-base m-12 md:ml-[32rem]
 }
 
 .app__section_three {
-  @apply flex w-screen h-screen mt-[98rem] bg-[#4831d4] absolute
+  @apply flex w-screen h-screen mt-[90rem] bg-[#4831d4] absolute
 }
 
 .app__section_three__title {
   @apply text-[#ccf381] text-4xl lg:text-5xl font-bold m-12
 }
 
-.app__section_three__description_three {
+.app__section_three__description_one {
   @apply text-white text-xs top-[10rem] left-16 absolute
+}
+
+.app__section_three__description_three {
+  @apply z-40 text-white text-xs top-[49.25rem] left-16 absolute
 }
 
 @media (max-width: 768px) {
