@@ -12,62 +12,62 @@ export default function App() {
   useEffect(() => {
     gsap.from(titleRef.current, {
       y: -5,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 0,
     });
     gsap.to(titleRef.current, {
       y: 0,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 1,
-      delay: 10,
+      delay: 5,
     });
 
     gsap.from(subtitleRef.current, {
       y: -5,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 0,
     });
     gsap.to(subtitleRef.current, {
       y: 0,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 1,
-      delay: 20,
+      delay: 10,
     });
 
     gsap.from(descriptionOneRef.current, {
       y: -5,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 0,
     });
     gsap.to(descriptionOneRef.current, {
       y: 0,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 1,
-      delay: 30,
+      delay: 15,
     });
 
     gsap.from(descriptionTwoRef.current, {
       y: -5,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 0,
     });
     gsap.to(descriptionTwoRef.current, {
       y: 0,
       duration: 5,
       autoAlpha: 1,
-      delay: 40,
+      delay: 20,
     });
 
     gsap.from(descriptionThreeRef.current, {
       y: -5,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 0,
     });
     gsap.to(descriptionThreeRef.current, {
       y: 0,
-      duration: 5,
+      duration: 2.5,
       autoAlpha: 1,
-      delay: 50,
+      delay: 25,
     });
   }, []);
 
