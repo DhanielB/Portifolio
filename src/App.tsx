@@ -9,7 +9,7 @@ export default function App() {
   const descriptionTwoRef = useRef(null);
   const descriptionThreeRef = useRef(null);
 
-  useEffect(async () => {
+  useEffect(() => {
     var timeline = gsap.timeline({repeat: 2, repeatDelay: 1});
 
     timeline.fromTo(titleRef.current, {
