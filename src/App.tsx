@@ -10,7 +10,7 @@ export default function App() {
   const descriptionThreeRef = useRef(null);
 
   useEffect(() => {
-    var timeline = gsap.timeline({repeat: 2, repeatDelay: 1});
+    var timeline = gsap.timeline({ repeatDelay: 1 });
 
     timeline.fromTo(titleRef.current, {
       y: -5,
