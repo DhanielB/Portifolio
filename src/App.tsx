@@ -11,7 +11,7 @@ export default function App() {
 
   useEffect(() => {
     var timeline = gsap.timeline({ repeatDelay: 1 });
-
+   
     timeline.fromTo(titleRef.current, {
       y: -5,
       duration: 2,
@@ -42,7 +42,7 @@ export default function App() {
       autoAlpha: 1
     });
 
-    timeline.repeatDelay(0);
+    timeline.add('start')
  
     timeline.fromTo(descriptionTwoRef.current, {
       y: -5,
@@ -52,7 +52,7 @@ export default function App() {
       y: 0,
       duration: 2,
       autoAlpha: 1
-    });
+    }, 'start');
 
     timeline.fromTo(descriptionThreeRef.current, {
       y: -5,
@@ -62,7 +62,7 @@ export default function App() {
       y: 0,
       duration: 2,
       autoAlpha: 1
-    });
+    }, 'start');
   }, []);
 
   return (
