@@ -10,64 +10,56 @@ export default function App() {
   const descriptionThreeRef = useRef(null);
 
   useEffect(async () => {
-    await gsap.from(titleRef.current, {
+    var timeline = gsap.timeline({repeat: 2, repeatDelay: 1});
+
+    timeline.fromTo(titleRef.current, {
       y: -5,
-      duration: 2.5,
+      duration: 2,
       autoAlpha: 0,
-    });
-    await gsap.to(titleRef.current, {
+    }, {
       y: 0,
-      duration: 2.5,
+      duration: 2,
       autoAlpha: 1,
-      delay: 5,
     });
 
-    await gsap.from(subtitleRef.current, {
+    timeline.fromTo(subtitleRef.current, {
       y: -5,
-      duration: 2.5,
-      autoAlpha: 0,
-    });
-    await gsap.to(subtitleRef.current, {
+      duration: 2,
+      autoAlpha: 0
+    }, {
       y: 0,
-      duration: 2.5,
-      autoAlpha: 1,
-      delay: 10,
+      duration: 2,
+      autoAlpha: 1
     });
 
-    await gsap.from(descriptionOneRef.current, {
+    timeline.fromTo(descriptionOneRef.current, {
       y: -5,
-      duration: 2.5,
+      duration: 2,
       autoAlpha: 0,
-    });
-    await gsap.to(descriptionOneRef.current, {
+    }, {
       y: 0,
-      duration: 2.5,
-      autoAlpha: 1,
-      delay: 15,
+      duration: 2,
+      autoAlpha: 1
     });
 
-    await gsap.from(descriptionTwoRef.current, {
+    timeline.fromTo(descriptionTwoRef.current, {
       y: -5,
-      duration: 2.5,
-      autoAlpha: 0,
-    });
-    await gsap.to(descriptionTwoRef.current, {
+      duration: 2,
+      autoAlpha: 0
+    }, {
       y: 0,
-      duration: 5,
-      autoAlpha: 1,
-      delay: 20,
+      duration: 2,
+      autoAlpha: 1
     });
 
-    await gsap.from(descriptionThreeRef.current, {
+    timeline.fromTo(descriptionThreeRef.current, {
       y: -5,
-      duration: 2.5,
-      autoAlpha: 0,
-    });
-    await gsap.to(descriptionThreeRef.current, {
+      duration: 2,
+      autoAlpha: 0
+    }, {
       y: 0,
-      duration: 2.5,
-      autoAlpha: 1,
-      delay: 25,
+      duration: 2,
+      autoAlpha: 1
     });
   }, []);
 
