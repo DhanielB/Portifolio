@@ -42,6 +42,8 @@ export default function App() {
       autoAlpha: 1
     });
 
+    timeline.repeatDelay(0);
+ 
     timeline.fromTo(descriptionTwoRef.current, {
       y: -5,
       duration: 2,
