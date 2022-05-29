@@ -69,22 +69,17 @@ export default function App() {
     }, 'start');
 
     const designTitle = gsap.fromTo(designTitleRef.current, {
-      y: -5,
+      y: -15,
       duration: 2,
-      autoAlpha: 0
     }, {
       y: 0,
       duration: 8,
-      autoAlpha: 1
     });
 
     ScrollTrigger.create({
       onEnter: () => {
         designTitle.play();
       },
-      onLeave: () => {
-        designTitle.reverse();
-      }
     });
   }, []);
 
