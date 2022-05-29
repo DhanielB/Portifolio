@@ -86,8 +86,8 @@
   @apply text-white text-xs top-[10rem] left-16 absolute
 }
 
-.app__section_three__description_three {
-  @apply z-40 text-white text-xs top-[49.25rem] left-16 absolute
+.app__section_three__description_two {
+  @apply z-40 text-white text-xs top-[12rem] left-16 absolute
 }
 
 @media (max-width: 768px) {
