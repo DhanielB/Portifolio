@@ -305,12 +305,6 @@ export default function App() {
             scale —<br></br> performance and scalabilty are priorities on my
             radar.
           </p>
-          <p ref={overDescriptionTwoRef} className="app__section_three__description_three">
-            Currently, I work at Shopify as a Senior UX Developer<br></br> and
-            Accessibility advocate crafting thoughtful and<br></br> inclusive
-            experiences that adhere to web standards<br></br> for over a million
-            merchants across the world.
-          </p>
         </section>
         <section className="app__section_three">
           <h1 ref={overTitleRef} className="app__section_three__title">
@@ -322,6 +316,12 @@ export default function App() {
             globe ranging from marketing websites<br></br> to complex solutions
             and enterprise apps with focus<br></br> on fast, elegant and
             accessible user experiences.
+          </p>
+          <p ref={overDescriptionTwoRef} className="app__section_three__description_three">
+            Currently, I work at Shopify as a Senior UX Developer<br></br> and
+            Accessibility advocate crafting thoughtful and<br></br> inclusive
+            experiences that adhere to web standards<br></br> for over a million
+            merchants across the world.
           </p>
         </section>
       </main>
