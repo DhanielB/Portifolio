@@ -73,6 +73,8 @@ export default function App() {
     ScrollTrigger.create({
       onEnter: () =>
         a.play()
+      onBack: () =>
+        a.reverse()
     });
   }, []);
 
