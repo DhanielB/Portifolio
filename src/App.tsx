@@ -70,10 +70,10 @@ export default function App() {
 
     const designTitle = gsap.fromTo(designTitleRef.current, {
       y: -15,
-      duration: 2,
+      duration: 0.5,
     }, {
       y: 0,
-      duration: 8,
+      duration: 0.5,
     });
 
     ScrollTrigger.create({
