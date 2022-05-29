@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import user from "./images/user.png";
 
@@ -10,8 +11,10 @@ export default function App() {
   const descriptionThreeRef = useRef(null);
 
   useEffect(() => {
-    var timeline = gsap.timeline({ repeatDelay: 1 });
-   
+    const timeline = gsap.timeline();
+    
+    gsap.registerPlugin(ScrollTrigger);
+
     timeline.fromTo(titleRef.current, {
       y: -5,
       duration: 2,
