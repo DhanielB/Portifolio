@@ -68,7 +68,7 @@ export default function App() {
       autoAlpha: 1
     }, 'start');
 
-    const a = gsap.to(test.current, { paused: true, x: 100, duration: 2, ease: "bounce", delay: 1, scrollTrigger: { trigger:test.current, scrub:true } });
+    const a = gsap.to(test.current, { paused: true, x: 100, duration: 2, delay: 1, scrollTrigger: { trigger:test.current, scrub:true } });
 
     ScrollTrigger.create({
       onEnter: () =>
