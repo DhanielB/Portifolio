@@ -14,6 +14,8 @@ export default function App() {
   const engeneeringTitleRef = useRef(null);
   const engeneeringDescriptionRef = useRef(null);
   const overTitleRef = useRef(null);
+  const overDescriptionOneRef = useRef(null);
+  const overDescriptionTwoRef = useRef(null);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -165,6 +167,46 @@ export default function App() {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: overTitleRef.current,
+          start: "center 70%",
+          end: "center 30%",
+          toggleActions: "play none none none",
+        }
+      }
+    );
+
+    gsap.fromTo(
+      overDescriptionOneRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: overDescriptionOneRef.current,
+          start: "center 70%",
+          end: "center 30%",
+          toggleActions: "play none none none",
+        }
+      }
+    );
+
+    gsap.fromTo(
+      overDescriptionTwoRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: overDescriptionTwoRef.current,
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
