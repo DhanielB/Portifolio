@@ -317,7 +317,7 @@ export default function App() {
             and enterprise apps with focus<br></br> on fast, elegant and
             accessible user experiences.
           </p>
-          <p ref={overDescriptionTwoRef} className="app__section_three__description_three">
+          <p ref={overDescriptionTwoRef} className="app__section_three__description_two">
             Currently, I work at Shopify as a Senior UX Developer<br></br> and
             Accessibility advocate crafting thoughtful and<br></br> inclusive
             experiences that adhere to web standards<br></br> for over a million
