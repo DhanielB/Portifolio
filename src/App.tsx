@@ -13,6 +13,7 @@ export default function App() {
   const designDescriptionRef = useRef(null);
   const engeneeringTitleRef = useRef(null);
   const engeneeringDescriptionRef = useRef(null);
+  const overTitleRef = useRef(null);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -150,6 +151,26 @@ export default function App() {
         }
       }
     );
+
+    gsap.fromTo(
+      overTitleRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: overTitleRef.current,
+          start: "center 70%",
+          end: "center 30%",
+          toggleActions: "play none none none",
+        }
+      }
+    );
   }, []);
 
   return (
@@ -250,7 +271,7 @@ export default function App() {
           </p>
         </section>
         <section className="app__section_three">
-          <h1 className="app__section_three__title">
+          <h1 ref={overTitleRef} className="app__section_three__title">
             Over the<br></br> past 1 year,
           </h1>
 
