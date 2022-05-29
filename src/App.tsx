@@ -68,19 +68,25 @@ export default function App() {
       autoAlpha: 1
     }, 'start');
 
-    const designTitle = gsap.fromTo(designTitleRef.current, {
-      y: -15,
-      duration: 0.5,
-    }, {
-      y: 0,
-      duration: 0.5,
-    });
-
-    ScrollTrigger.create({
-      onEnter: () => {
-        designTitle.play();
+    gsap.fromTo(
+      designTitleRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0
       },
-    });
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1
+        scrollTrigger: {
+          trigger: designTitleRef.current,
+          start: "center 70%",
+          end: "center 30%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
   }, []);
 
   return (
