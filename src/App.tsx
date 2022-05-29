@@ -83,7 +83,7 @@ export default function App() {
           trigger: designTitleRef.current,
           start: "center 70%",
           end: "center 30%",
-          toggleActions: "play reverse",
+          toggleActions: play none none none",
         }
       }
     );
