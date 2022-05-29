@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import user from "./images/user.png";
 
 export default function App() {
+  const test = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const descriptionOneRef = useRef(null);
@@ -66,6 +67,8 @@ export default function App() {
       duration: 2,
       autoAlpha: 1
     }, 'start');
+
+    gsap.to(test.current, { x: 100, duration: 2, ease: "bounce", delay: 1, scrollTrigger: { trigger:test.current } });
   }, []);
 
   return (
@@ -79,7 +82,15 @@ export default function App() {
           id="avatar-shapes"
           data-shape="true"
         >
-          <path
+          <pathgsap.to("#thirdCircle", {
+      x: 100,
+      duration: 2,
+      ease: "bounce",
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#thirdCircle"
+      }
+    });
             fill="none"
             stroke="#ccf381"
             stroke-miterlimit="50"
@@ -140,7 +151,7 @@ export default function App() {
           </div>
         </section>
         <section className="app__section_two">
-          <h1 className="app__section_two__title_one">Design</h1>
+          <h1 ref={test} className="app__section_two__title_one">Design</h1>
           <p className="app__section_two__description_one">
             I'm probably not the typical designer positioned<br></br>
             behind an Illustrator artboard adjusting pixels, but I<br></br>
