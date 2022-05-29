@@ -74,7 +74,7 @@ export default function App() {
       autoAlpha: 0
     }, {
       y: 0,
-      duration: 2,
+      duration: 8,
       autoAlpha: 1
     });
 
