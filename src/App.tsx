@@ -78,13 +78,13 @@ export default function App() {
       {
         y: 0,
         duration: 2,
-        autoAlpha: 1
+        autoAlpha: 1,
         scrollTrigger: {
           trigger: designTitleRef.current,
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play reverse play reverse",
-        },
+        }
       }
     );
   }, []);
