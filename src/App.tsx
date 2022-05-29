@@ -82,15 +82,7 @@ export default function App() {
           id="avatar-shapes"
           data-shape="true"
         >
-          <pathgsap.to("#thirdCircle", {
-      x: 100,
-      duration: 2,
-      ease: "bounce",
-      delay: 1,
-      scrollTrigger: {
-        trigger: "#thirdCircle"
-      }
-    });
+          <path
             fill="none"
             stroke="#ccf381"
             stroke-miterlimit="50"
