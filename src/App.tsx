@@ -92,7 +92,7 @@ export default function App() {
     );
 
     gsap.fromTo(
-      desigDescriptionRef.current,
+      designDescriptionRef.current,
       {
         y: -5,
         duration: 2,
@@ -103,7 +103,7 @@ export default function App() {
         duration: 2,
         autoAlpha: 1,
         scrollTrigger: {
-          trigger: desigDescriptionRef.current,
+          trigger: designDescriptionRef.current,
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
