@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react";
 import user from "./images/user.png";
 
 export default function App() {
-  const test = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const descriptionOneRef = useRef(null);
   const descriptionTwoRef = useRef(null);
   const descriptionThreeRef = useRef(null);
+  const designTitleRef = useRef(null);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -68,13 +68,23 @@ export default function App() {
       autoAlpha: 1
     }, 'start');
 
-    const a = gsap.to(test.current, { paused: true, x: 100, duration: 2, delay: 1, scrollTrigger: { trigger:test.current, scrub:1 } });
+    const designTitle = gsap.fromTo(designTitleRef.current, {
+      y: -5,
+      duration: 2,
+      autoAlpha: 0
+    }, {
+      y: 0,
+      duration: 2,
+      autoAlpha: 1
+    });
 
     ScrollTrigger.create({
-      onEnter: () =>
-        a.play(),
-      onLeave: () =>
-        a.reverse()
+      onEnter: () => {
+        designTitle.play();
+      },
+      onLeave: () => {
+        designTitle.reverse();
+      }
     });
   }, []);
 
