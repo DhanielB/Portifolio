@@ -160,7 +160,7 @@ export default function App() {
           </div>
         </section>
         <section className="app__section_two">
-          <h1 ref={test} className="app__section_two__title_one">Design</h1>
+          <h1 ref={designTitleRef} className="app__section_two__title_one">Design</h1>
           <p className="app__section_two__description_one">
             I'm probably not the typical designer positioned<br></br>
             behind an Illustrator artboard adjusting pixels, but I<br></br>
