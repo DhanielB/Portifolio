@@ -1,9 +1,12 @@
+import strftime from 'strftime'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import user from "./images/user.png";
 
 export default function App() {
+  const [timer, setTimer] = useState('')
+ 
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const descriptionOneRef = useRef(null);
@@ -16,6 +19,18 @@ export default function App() {
   const overTitleRef = useRef(null);
   const overDescriptionOneRef = useRef(null);
   const overDescriptionTwoRef = useRef(null);
+
+  setInterval(() => {
+    const weekDay = strftime('%a')
+    const month = strftime('%B')
+    const day = strftime('%U')
+    const hour = strftime('%H')
+    const minutes = strftime('%M')
+    const meridian = strftime('%P').toUpperCase()
+    
+    const text = `${weekDay} ${month} ${day}, ${hour}:${minutes} ${meridian}`
+    setTimer(text)
+  }, 1000)
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -167,7 +182,7 @@ export default function App() {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: overTitleRef.current,
-          start: "center 70%",
+          start: "center 100%",
           end: "center 30%",
           toggleActions: "play none none none",
         }
@@ -179,7 +194,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -187,7 +202,7 @@ export default function App() {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: overDescriptionOneRef.current,
-          start: "center 70%",
+          start: "center 50%",
           end: "center 30%",
           toggleActions: "play none none none",
         }
@@ -199,7 +214,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -207,7 +222,7 @@ export default function App() {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: overDescriptionTwoRef.current,
-          start: "center 70%",
+          start: "center 50%",
           end: "center 30%",
           toggleActions: "play none none none",
         }
@@ -217,6 +232,11 @@ export default function App() {
 
   return (
     <div className="app">
+      <header className="app__header">
+      <a className="app__header_projects">Projects</a>
+        <a className="app__header_contact">Contact</a>
+        <a className="app__header_timer">{timer}</a>
+      </header>
       <div className="app__background">
         <svg
           xmlns="http://www.w3.org/2000/svg"

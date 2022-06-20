@@ -2,12 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-text-primary: #ccf381;
+  --color-text-secondary: #4831d4;
+}
+
+@font-face {
+  font-family: 'SF-Compact';
+  src: url("fonts/SF-Compact.ttf");
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'SF-Compact-Bold';
+  src: url("fonts/SF-Compact-Display-Bold.ttf");
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
 
 .app {
   @apply flex w-screen h-full;
+}
+
+.app__header {
+  font-family: 'SF-Compact';
+  @apply flex w-full h-10 fixed z-60
+}
+
+.app__header .app__header_projects {
+  @apply mr-[1.5rem] mt-[0.5rem] left-16 absolute hidden sm:block
+}
+
+.app__header .app__header_contact {
+  @apply mr-[1.5rem] mt-[0.5rem] left-40 absolute hidden sm:block
+}
+
+.app__header .app__header_timer {
+  font-family: 'SF-Compact-Bold';
+  @apply w-[6.25rem] sm:w-auto break-all mr-[0.5rem] sm:mr-[1.5rem] mt-[0.5rem] right-[0.5rem] absolute
 }
 
 .app__background {
@@ -23,19 +58,25 @@
 }
 
 .app__title {
-  @apply top-24 left-12 md:top-40 md:left-24 text-[#ccf381] text-5xl lg:text-6xl font-bold absolute;
+  @apply top-24 left-12 md:top-40 md:left-24 text-primary text-5xl lg:text-6xl font-bold absolute;
 }
 
 .app__description_one {
+  font-weight: 100;
+  font-family: 'SF-Compact';
   @apply text-white top-64 left-12 md:text-base md:top-72 md:left-24 absolute
 }
 
 .app__description_two {
-  @apply text-xs text-[#ccf381] top-96 left-12 md:top-96 md:left-24 absolute;
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply text-xs text-primary top-96 left-12 md:top-96 md:left-24 absolute;
 }
 
 .app__description_three {
-  @apply text-xs text-[#ccf381] top-96 left-60 md:top-96 md:left-72 absolute;
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply text-xs text-primary top-96 left-64 md:top-96 md:left-72 absolute;
 }
 
 .app__title .dot {
@@ -59,35 +100,43 @@
 }
 
 .app__section_two__title_one {
-  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12
+  @apply text-secondary text-3xl lg:text-4xl font-bold m-12
 }
 
 .app__section_two__description_one {
-  @apply text-gray-500 text-xs lg:text-base m-12
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply text-gray-500 text-[0.75rem] lg:text-[0.95rem] m-12
 }
 
 .app__section_two__title_two {
-  @apply text-[#4831d4] text-3xl lg:text-4xl font-bold m-12 md:ml-[32rem]
+  @apply text-secondary text-3xl lg:text-4xl font-bold m-12 md:ml-[32rem]
 }
 
 .app__section_two__description_two {
-  @apply text-gray-500 text-xs lg:text-base m-12 md:ml-[32rem]
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply text-gray-500 text-[0.75rem] lg:text-[0.95rem] m-12 md:ml-[32rem]
 }
 
 .app__section_three {
-  @apply flex w-screen h-screen mt-[90rem] bg-[#4831d4] absolute
+  @apply flex w-full h-screen mt-[90rem] bg-secondary absolute
 }
 
 .app__section_three__title {
-  @apply text-[#ccf381] text-4xl lg:text-5xl font-bold m-12
+  @apply text-primary text-4xl lg:text-5xl font-bold m-12
 }
 
 .app__section_three__description_one {
-  @apply text-white text-xs top-[10rem] left-16 absolute
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply text-white text-xs top-[15rem] left-16 absolute
 }
 
 .app__section_three__description_two {
-  @apply z-40 text-white text-xs top-[5rem] left-16 absolute
+  font-weight: 100;
+  font-family: 'SF-Compact';
+  @apply z-50 text-white text-xs top-[10.5rem] left-16 absolute
 }
 
 @media (max-width: 768px) {
