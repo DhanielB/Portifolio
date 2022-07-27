@@ -28,7 +28,7 @@
 }
 
 .app__header {
-  font-family: 'SF-Compact';
+  font-family: 'SF-Compact', sans-serif !important;
   @apply flex w-full h-10 fixed z-60
 }
 
@@ -41,7 +41,7 @@
 }
 
 .app__header .app__header_timer {
-  font-family: 'SF-Compact-Bold', sans-serif;
+  font-family: 'SF-Compact-Bold', sans-serif !important;
   @apply w-[6.25rem] sm:w-auto break-all mr-[0.5rem] sm:mr-[1.5rem] mt-[0.5rem] right-[0.5rem] absolute
 }
 
@@ -63,19 +63,19 @@
 
 .app__description_one {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-white top-64 left-12 md:text-base md:top-72 md:left-24 absolute
 }
 
 .app__description_two {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-xs text-primary top-96 left-12 md:top-96 md:left-24 absolute;
 }
 
 .app__description_three {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-xs text-primary top-96 left-64 md:top-96 md:left-72 absolute;
 }
 
@@ -105,7 +105,7 @@
 
 .app__section_two__description_one {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-gray-500 text-[0.75rem] lg:text-[0.95rem] m-12
 }
 
@@ -115,7 +115,7 @@
 
 .app__section_two__description_two {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-gray-500 text-[0.75rem] lg:text-[0.95rem] m-12 md:ml-[32rem]
 }
 
@@ -129,13 +129,13 @@
 
 .app__section_three__description_one {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply text-white text-xs top-[15rem] left-16 absolute
 }
 
 .app__section_three__description_two {
   font-weight: 100;
-  font-family: 'SF-Compact', sans-serif;
+  font-family: 'SF-Compact', sans-serif !important;
   @apply z-50 text-white text-xs top-[10.5rem] left-16 absolute
 }
 
