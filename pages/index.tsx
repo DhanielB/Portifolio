@@ -250,7 +250,8 @@ export default function App() {
           <path
             fill="none"
             stroke="#ccf381"
-            stroke-width="2"
+            strokeMiterlimit="50"
+            strokeWidth="2"
             d="M165.648 352.811v0l15.343 16.136v0l15.343-16.136v0l15.341 16.136v0l15.343-16.136v0l15.343 16.136v0l15.343-16.136v0l15.344 16.136v0l15.345-16.136v0"
           ></path>
           <path
@@ -264,12 +265,14 @@ export default function App() {
           <path
             fill="none"
             stroke="#4831d4"
-            stroke-width="2"
+            strokeMiterlimit="50"
+            strokeWidth="2"
             d="M846.646 332.048v0l22.258.562v0l-.56-22.26v0l22.258.56v0l-.56-22.258v0l22.259.56v0l-.56-22.257v0l22.26.559v0l-.56-22.26v0"
           ></path>
           <path
             fill="none"
             stroke="#ccf381"
+            strokeMiterlimit="50"
             stroke-width="2"
             d="M2.114 541.705v0l-.56 22.258v0l22.258-.561v0l-.56 22.259v0l22.258-.56v0l-.56 22.258v0l22.258-.56v0l-.559 22.26v0l22.26-.56v0"
           ></path>
