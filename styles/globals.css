@@ -29,11 +29,7 @@
 
 .app__header {
   font-family: 'SF-Compact', Arial, sans-serif;
-  @apply flex w-full h-16 fixed z-60;
-}
-
-html:not([data-scroll='0']) .app__header {
-  @apply backdrop-blur-xl border-b border-gray-200 border-opacity-30;
+  @apply flex w-full h-16 fixed z-60 backdrop-blur-xl border-b border-gray-200 border-opacity-30;
 }
   
 .app__header .app__header_projects {
