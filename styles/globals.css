@@ -32,7 +32,7 @@
   @apply flex w-full h-16 fixed z-60;
 }
 
-.app__header:not([data-scroll='0']) {
+html:not([data-scroll='0']) .app__header {
   @apply backdrop-blur-xl border-b border-gray-200 border-opacity-30;
 }
   
