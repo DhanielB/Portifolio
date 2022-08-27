@@ -46,7 +46,7 @@ html:not([data-scroll='0']) {
 }
 
 .app__header .app__header_timer {
-  font-family: 'SF-Compact', Arial, sans-serif !important;
+  font-family: 'SF-Compact-Bold', Arial, sans-serif !important;
   @apply w-[6.25rem] sm:w-auto break-all mr-[0.5rem] sm:mr-[1.5rem] mt-[0.5rem] right-[0.5rem] absolute z-100
 }
 
