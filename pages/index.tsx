@@ -273,7 +273,7 @@ export default function App() {
             fill="none"
             stroke="#ccf381"
             strokeMiterlimit="50"
-            stroke-width="2"
+            strokeWidth="2"
             d="M2.114 541.705v0l-.56 22.258v0l22.258-.561v0l-.56 22.259v0l22.258-.56v0l-.56 22.258v0l22.258-.56v0l-.559 22.26v0l22.26-.56v0"
           ></path>
         </svg>
@@ -312,17 +312,17 @@ export default function App() {
         <section className="app__section_two">
           <h1 ref={designTitleRef} className="app__section_two__title_one">Design</h1>
           <p ref={designDescriptionRef} className="app__section_two__description_one">
-            I'm probably not the typical designer positioned<br></br>
+            I&apos;m probably not the typical designer positioned<br></br>
             behind an Illustrator artboard adjusting pixels, but I<br></br>
             design. Immersed in stylesheets tweaking font sizes<br></br> and
-            contemplating layouts is where you'll find me<br></br> (~_^). I'm
+            contemplating layouts is where you&apos;ll find me<br></br> (~_^). I&apos;m
             committed to creating fluent user<br></br>
             experiences while staying fashionable.
           </p>
 
           <h1 ref={engeneeringTitleRef} className="app__section_two__title_two">Engeneering</h1>
           <p ref={engeneeringDescriptionRef} className="app__section_two__description_two">
-            In building JavaScript applications, I'm equipped with just the
+            In building JavaScript applications, I&apos;m equipped with just the
             <br></br> right tools, and can absolutely function independently of
             them<br></br> to deliver fast, resilient solutions optimized for
             scale —<br></br> performance and scalabilty are priorities on my
@@ -335,7 +335,7 @@ export default function App() {
           </h1>
 
           <p ref={overDescriptionOneRef} className="app__section_three__description_one">
-            I've built products for companies and businesses<br></br> around the
+            I&apos;ve built products for companies and businesses<br></br> around the
             globe ranging from marketing websites<br></br> to complex solutions
             and enterprise apps with focus<br></br> on fast, elegant and
             accessible user experiences.
