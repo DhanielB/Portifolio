@@ -24,7 +24,7 @@ export default function App() {
   setInterval(() => {
     const weekDay = strftime('%a')
     const month = strftime('%B')
-    const day = strftime('%U')
+    const day = strftime('%d')
     const hour = strftime('%H')
     const minutes = strftime('%M')
     const meridian = strftime('%P').toUpperCase()
