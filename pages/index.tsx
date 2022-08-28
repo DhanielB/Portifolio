@@ -64,7 +64,7 @@ export default function App() {
       start: "top top",
       end: 99999,
       onUpdate: (self) => {
-        self.direction === -1 ? nameAnimation.play() : nameAnimation.reverse()
+        self.direction === -1 ? nameAnimation.reverse() : nameAnimation.play()
       }
     })
 
