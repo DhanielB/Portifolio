@@ -52,7 +52,7 @@
 }
 
 .app__header .app__header_menu_projectsbutton {
-  @apply flex top-12 w-full h-12 z-100 border-b border-gray-400 border-opacity-30 hover:bg-gray-300 hover:border-gray-400 hover:border-opacity-30 transition-colors cursor-pointer absolute;
+  @apply flex w-full h-12 z-100 border-b border-gray-400 border-opacity-30 hover:bg-gray-300 hover:border-gray-400 hover:border-opacity-30 transition-colors cursor-pointer absolute;
 }
 
 .app__header .app__header_menu_contacts {
@@ -60,7 +60,7 @@
 }
 
 .app__header .app__header_menu_contactsbutton {
-  @apply flex top-24 w-full h-12 z-100 border-b border-gray-400 border-opacity-30 hover:bg-gray-300 hover:border-gray-400 hover:border-opacity-30 transition-colors cursor-pointer absolute;
+  @apply flex top-12 w-full h-12 z-100 border-b border-gray-400 border-opacity-30 hover:bg-gray-300 hover:border-gray-400 hover:border-opacity-30 transition-colors cursor-pointer absolute;
 }
 
 .app__header .app__header_menu_github {
