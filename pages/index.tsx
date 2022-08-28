@@ -39,6 +39,20 @@ export default function App() {
     
     gsap.registerPlugin(ScrollTrigger);
 
+    const showAnim = gsap.from(menuRef, { 
+      yPercent: -100,
+      paused: true,
+      duration: 0.2
+    }).progress(1);
+
+  ScrollTrigger.create({
+    start: "top top",
+    end: 99999,
+    onUpdate: (self) => {
+      self.direction === -1 ? showAnim.reverse() : showAnim.play()
+    }
+  })
+
     timeline.fromTo(titleRef.current, {
       y: -5,
       duration: 2,
