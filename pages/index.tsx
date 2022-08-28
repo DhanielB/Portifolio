@@ -1,12 +1,15 @@
-import strftime from 'strftime'
+import strftime from "strftime";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import user from "../images/user.png";
-import Image from 'next/image';
+import Image from "next/image";
+import { X, List } from "phosphor-react";
 
 export default function App() {
-  const [timer, setTimer] = useState('')
+  const [timer, setTimer] = useState("");
+  const [direction, setDirection] = useState(0)
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const menuRef = useRef(null);
   const titleRef = useRef(null);
@@ -23,94 +26,128 @@ export default function App() {
   const overDescriptionTwoRef = useRef(null);
 
   setInterval(() => {
-    const weekDay = strftime('%a')
-    const month = strftime('%B')
-    const day = strftime('%d')
-    const hour = strftime('%H')
-    const minutes = strftime('%M')
-    const meridian = strftime('%P').toUpperCase()
-    
-    const text = `${weekDay} ${month} ${day}, ${hour}:${minutes} ${meridian}`
-    setTimer(text)
-  }, 1000)
+    const weekDay = strftime("%a");
+    const month = strftime("%B");
+    const day = strftime("%d");
+    const hour = strftime("%H");
+    const minutes = strftime("%M");
+    const meridian = strftime("%P").toUpperCase();
+
+    const text = `${weekDay} ${month} ${day}, ${hour}:${minutes} ${meridian}`;
+    setTimer(text);
+  }, 1000);
 
   useEffect(() => {
     const timeline = gsap.timeline();
-    
+
     gsap.registerPlugin(ScrollTrigger);
 
-    const menuAnimation = gsap.from(menuRef.current, { 
-      yPercent: -100,
-      paused: true,
-      duration: 0.2
-    }).progress(1).reverse();
+    const menuAnimation = gsap
+      .from(menuRef.current, {
+        yPercent: -100,
+        paused: true,
+        duration: 0.2,
+      })
+      .progress(1)
+      .reverse();
 
     ScrollTrigger.create({
       start: "top top",
       end: 99999,
       onUpdate: (self) => {
-        self.direction === -1 ? menuAnimation.reverse() : menuAnimation.play()
+        if(self.direction === -1) {
+          if(!menuVisible) {
+            setDirection(self.direction)
+            menuAnimation.reverse()
+          }
+        }else{
+          if(!menuVisible) {
+            menuAnimation.play()
+          }
+        }
+      },
+    });
+
+    timeline.fromTo(
+      titleRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
       }
-    })
+    );
 
-    timeline.fromTo(titleRef.current, {
-      y: -5,
-      duration: 2,
-      autoAlpha: 0,
-    }, {
-      y: 0,
-      duration: 2,
-      autoAlpha: 1,
-    });
+    timeline.fromTo(
+      subtitleRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+      }
+    );
 
-    timeline.fromTo(subtitleRef.current, {
-      y: -5,
-      duration: 2,
-      autoAlpha: 0
-    }, {
-      y: 0,
-      duration: 2,
-      autoAlpha: 1
-    });
+    timeline.fromTo(
+      descriptionOneRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+      }
+    );
 
-    timeline.fromTo(descriptionOneRef.current, {
-      y: -5,
-      duration: 2,
-      autoAlpha: 0,
-    }, {
-      y: 0,
-      duration: 2,
-      autoAlpha: 1
-    });
+    timeline.add("start");
 
-    timeline.add('start')
- 
-    timeline.fromTo(descriptionTwoRef.current, {
-      y: -5,
-      duration: 2,
-      autoAlpha: 0
-    }, {
-      y: 0,
-      duration: 2,
-      autoAlpha: 1
-    }, 'start');
+    timeline.fromTo(
+      descriptionTwoRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+      },
+      "start"
+    );
 
-    timeline.fromTo(descriptionThreeRef.current, {
-      y: -5,
-      duration: 2,
-      autoAlpha: 0
-    }, {
-      y: 0,
-      duration: 2,
-      autoAlpha: 1
-    }, 'start');
+    timeline.fromTo(
+      descriptionThreeRef.current,
+      {
+        y: -5,
+        duration: 2,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        duration: 2,
+        autoAlpha: 1,
+      },
+      "start"
+    );
 
     gsap.fromTo(
       designTitleRef.current,
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -121,7 +158,7 @@ export default function App() {
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -130,7 +167,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -141,7 +178,7 @@ export default function App() {
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -150,7 +187,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -161,7 +198,7 @@ export default function App() {
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -170,7 +207,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -181,7 +218,7 @@ export default function App() {
           start: "center 70%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -190,7 +227,7 @@ export default function App() {
       {
         y: -5,
         duration: 2,
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         y: 0,
@@ -201,7 +238,7 @@ export default function App() {
           start: "center 100%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -221,7 +258,7 @@ export default function App() {
           start: "center 50%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
 
@@ -241,7 +278,7 @@ export default function App() {
           start: "center 50%",
           end: "center 30%",
           toggleActions: "play none none none",
-        }
+        },
       }
     );
   }, []);
@@ -249,6 +286,39 @@ export default function App() {
   return (
     <div className="app">
       <header className="app__header" ref={menuRef}>
+        <div className="app__header_menuarea">
+          {!menuVisible ? <List
+            className="app__header_menubutton"
+            onClick={() => {
+              setMenuVisible((state) => !state);
+            }}
+          /> : <X
+          className="app__header_menubutton"
+          onClick={() => {
+            setMenuVisible((state) => !state);
+          }}
+        />}
+
+          {menuVisible ? (
+            <div className="app__header_menu">
+              <div className="app__header_menu_projectsbutton">
+                <a className="app__header_menu_projects">Projects</a>
+              </div>
+
+              <div className="app__header_menu_contactsbutton">
+                <a className="app__header_menu_contacts">Contacts</a>
+              </div>
+
+              <div className="app__header_menu_githubbutton">
+                <a className="app__header_menu_github" href="https://github.com/dhanielb#README.md" target="_blank">github.com/dhanielb</a>
+              </div>
+
+              <button onClick={() => {
+                setMenuVisible((state) => !state);
+              }} className="app__header_menu_close"></button>
+            </div>
+          ) : null}
+        </div>
         <a className="app__header_projects">Projects</a>
         <a className="app__header_contact">Contact</a>
         <a className="app__header_timer">{timer}</a>
@@ -297,7 +367,13 @@ export default function App() {
       <main className="app__main">
         <section className="app__section_one">
           <div className="app__avatar">
-            <Image className="app__avatar" src={user} alt="avatar" layout="fill" objectFit="cover"/>
+            <Image
+              className="app__avatar"
+              src={user}
+              alt="avatar"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
           <figure className="app__avatar_figure"></figure>
           <div className="app__title">
@@ -325,18 +401,28 @@ export default function App() {
           </div>
         </section>
         <section className="app__section_two">
-          <h1 ref={designTitleRef} className="app__section_two__title_one">Design</h1>
-          <p ref={designDescriptionRef} className="app__section_two__description_one">
+          <h1 ref={designTitleRef} className="app__section_two__title_one">
+            Design
+          </h1>
+          <p
+            ref={designDescriptionRef}
+            className="app__section_two__description_one"
+          >
             I&apos;m probably not the typical designer positioned<br></br>
             behind an Illustrator artboard adjusting pixels, but I<br></br>
             design. Immersed in stylesheets tweaking font sizes<br></br> and
-            contemplating layouts is where you&apos;ll find me<br></br> (~_^). I&apos;m
-            committed to creating fluent user<br></br>
+            contemplating layouts is where you&apos;ll find me<br></br> (~_^).
+            I&apos;m committed to creating fluent user<br></br>
             experiences while staying fashionable.
           </p>
 
-          <h1 ref={engeneeringTitleRef} className="app__section_two__title_two">Engeneering</h1>
-          <p ref={engeneeringDescriptionRef} className="app__section_two__description_two">
+          <h1 ref={engeneeringTitleRef} className="app__section_two__title_two">
+            Engeneering
+          </h1>
+          <p
+            ref={engeneeringDescriptionRef}
+            className="app__section_two__description_two"
+          >
             In building JavaScript applications, I&apos;m equipped with just the
             <br></br> right tools, and can absolutely function independently of
             them<br></br> to deliver fast, resilient solutions optimized for
@@ -349,13 +435,19 @@ export default function App() {
             Over the<br></br> past 1 year,
           </h1>
 
-          <p ref={overDescriptionOneRef} className="app__section_three__description_one">
-            I&apos;ve built products for companies and businesses<br></br> around the
-            globe ranging from marketing websites<br></br> to complex solutions
-            and enterprise apps with focus<br></br> on fast, elegant and
-            accessible user experiences.
+          <p
+            ref={overDescriptionOneRef}
+            className="app__section_three__description_one"
+          >
+            I&apos;ve built products for companies and businesses<br></br>{" "}
+            around the globe ranging from marketing websites<br></br> to complex
+            solutions and enterprise apps with focus<br></br> on fast, elegant
+            and accessible user experiences.
           </p>
-          <p ref={overDescriptionTwoRef} className="app__section_three__description_two">
+          <p
+            ref={overDescriptionTwoRef}
+            className="app__section_three__description_two"
+          >
             Currently, I work at Shopify as a Senior UX Developer<br></br> and
             Accessibility advocate crafting thoughtful and<br></br> inclusive
             experiences that adhere to web standards<br></br> for over a million
