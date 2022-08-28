@@ -43,7 +43,7 @@ export default function App() {
       yPercent: -100,
       paused: true,
       duration: 0.2
-    }).progress(1);
+    }).progress(1).reverse();
 
     ScrollTrigger.create({
       start: "top top",
