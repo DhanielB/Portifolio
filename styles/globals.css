@@ -29,6 +29,10 @@
   @apply flex w-screen h-full;
 }
 
+.app__header_title {
+  @apply top-24 left-12 md:top-28 md:left-2₩ text-primary text-3xl lg:text-4xl font-bold absolute;
+}
+
 .app__header {
   font-family: 'SF-Compact', Arial, sans-serif;
   @apply flex w-full h-16 fixed z-60 backdrop-blur-xl border-b border-gray-200 border-opacity-30;
