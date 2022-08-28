@@ -39,33 +39,18 @@ export default function App() {
     
     gsap.registerPlugin(ScrollTrigger);
 
-    //const menuAnimation = gsap.from(menuRef.current, { 
-    //  yPercent: -100,
-    //  paused: true,
-    //  duration: 0.2
-    //}).progress(1).reverse();
+    const menuAnimation = gsap.from(menuRef.current, { 
+      yPercent: -100,
+      paused: true,
+      duration: 0.2
+    }).progress(1).reverse();
 
-    //ScrollTrigger.create({
-    //  start: "top top",
-    //  end: 99999,
-    //  onUpdate: (self) => {
-    //    self.direction === -1 ? menuAnimation.reverse() : menuAnimation.play()
-    //  }
-    //})
-
-    gsap.set(menuRef.current, {
-      yPercent: 20
-    })
-
-     gsap.to(menuRef.current, {
-       scrollTrigger: {
-         trigger: "top",
-         scrub: true,
-         start: "top bottom",
-         end: "bottom top",
-         ease: "power2"
-      },
-      yPercent: -100
+    ScrollTrigger.create({
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? menuAnimation.reverse() : menuAnimation.play()
+      }
     })
 
     timeline.fromTo(titleRef.current, {
