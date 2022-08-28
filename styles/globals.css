@@ -32,11 +32,6 @@
   @apply flex w-full h-16 fixed z-60 backdrop-blur-xl border-b border-gray-200 border-opacity-30;
 }
 
-html:not([data-scroll='0']) {
-  .app__header {
-    @apply backdrop-blur-xl border-b border-gray-200 border-opacity-30;
-  }
-}
 .app__header .app__header_projects {
   @apply mr-[1.5rem] mt-[0.5rem] left-16 absolute hidden sm:block z-100
 }
