@@ -43,7 +43,7 @@ export default function App() {
     const menuAnimation = gsap.from(menuRef.current, { 
       yPercent: -100,
       paused: true,
-      duration: 0.2
+      duration: 0
     }).progress(1).reverse();
 
     ScrollTrigger.create({
