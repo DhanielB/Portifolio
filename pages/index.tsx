@@ -253,6 +253,7 @@ export default function App() {
         <a className="app__header_contact">Contact</a>
         <a className="app__header_timer">{timer}</a>
       </header>
+      <h1 className="app__header_title">Dhaniel.</h1>
       <div className="app__background">
         <svg
           xmlns="http://www.w3.org/2000/svg"
