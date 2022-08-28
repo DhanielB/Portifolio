@@ -310,7 +310,7 @@ export default function App() {
               </div>
 
               <div className="app__header_menu_githubbutton">
-                <a className="app__header_menu_github" href="https://github.com/dhanielb#README.md" target="_blank">github.com/dhanielb</a>
+                <a className="app__header_menu_github" href="https://github.com/dhanielb#README.md" target="_blank" rel="noopener noreferrer">github.com/dhanielb</a>
               </div>
 
               <button onClick={() => {
