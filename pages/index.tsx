@@ -7,7 +7,8 @@ import Image from 'next/image';
 
 export default function App() {
   const [timer, setTimer] = useState('')
- 
+
+  const menuRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const descriptionOneRef = useRef(null);
@@ -233,7 +234,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="app__header">
+      <header className="app__header" ref={menuRef}>
         <a className="app__header_projects">Projects</a>
         <a className="app__header_contact">Contact</a>
         <a className="app__header_timer">{timer}</a>
