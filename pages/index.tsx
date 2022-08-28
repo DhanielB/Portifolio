@@ -8,7 +8,6 @@ import Image from 'next/image';
 export default function App() {
   const [timer, setTimer] = useState('')
 
-  const nameRef = useRef(null);
   const menuRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -51,20 +50,6 @@ export default function App() {
       end: 99999,
       onUpdate: (self) => {
         self.direction === -1 ? menuAnimation.reverse() : menuAnimation.play()
-      }
-    })
-
-    const nameAnimation = gsap.from(nameRef.current, { 
-      yPercent: -100,
-      paused: true,
-      duration: 0
-    }).progress(1).reverse();
-
-    ScrollTrigger.create({
-      start: "top top",
-      end: 99999,
-      onUpdate: (self) => {
-        self.direction === -1 ? nameAnimation.reverse() : nameAnimation.play()
       }
     })
 
@@ -268,7 +253,6 @@ export default function App() {
         <a className="app__header_contact">Contact</a>
         <a className="app__header_timer">{timer}</a>
       </header>
-      <h1 className="app__header_title">Dhaniel</h1>
       <div className="app__background">
         <svg
           xmlns="http://www.w3.org/2000/svg"
