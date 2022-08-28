@@ -59,7 +59,7 @@ export default function App() {
 
      gsap.to(menuRef.current, {
        scrollTrigger: {
-         trigger: page,
+         trigger: "top",
          scrub: true,
          start: "top bottom",
          end: "bottom top",
