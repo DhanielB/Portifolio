@@ -178,6 +178,33 @@
   @apply z-50 text-white text-xs top-[10.5rem] left-16 absolute;
 }
 
+.app__section_three__product {
+  @apply bg-white w-[24rem] h-[5rem] rounded-md px-2 py-1 left-[2.5%] top-[calc(100%-15%)] cursor-pointer absolute
+}
+
+.app__section_three__product_title {
+  @apply font-bold text-xl
+}
+
+.app__section_three__product_description {
+  @apply text-blue-500 px-2
+}
+
+.app__section_three__product_image {
+  width: 5rem;
+  height: 5rem;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 0.15rem;
+  left: 15rem;
+  bottom: 1.5rem;
+  border-color: white;
+  position: absolute;
+}
+.app__section_three__product_icon {
+  @apply w-[2rem] h-[2rem] left-[21.5rem] bottom-[1.5rem] absolute
+}
+
 @media (max-width: 768px) {
   .app__background {
     background: linear-gradient(-180deg, #4831d4 56%, #ccf381 56%);

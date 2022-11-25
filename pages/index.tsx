@@ -1,14 +1,19 @@
+import React from "react";
+import { loadStripe } from "@stripe/stripe-js";
 import strftime from "strftime";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import user from "../images/user.png";
 import Image from "next/image";
-import { X, List } from "phosphor-react";
+import { X, List, CaretRight } from "phosphor-react";
+import Stripe from "stripe";
+import { useRouter } from "next/router";
 
-export default function App() {
+export default function App({ products }: { products: any }) {
+  const router = useRouter();
   const [timer, setTimer] = useState("");
-  const [direction, setDirection] = useState(0)
+  const [direction, setDirection] = useState(0);
   const [menuVisible, setMenuVisible] = useState(false);
 
   const menuRef = useRef(null);
@@ -37,6 +42,10 @@ export default function App() {
     setTimer(text);
   }, 1000);
 
+  const handleCheckout = async (id: string) => {
+    router.push("https://donate.stripe.com/test_cN2cPrdOtaaIeHKbIJ");
+  };
+
   useEffect(() => {
     const timeline = gsap.timeline();
 
@@ -55,14 +64,14 @@ export default function App() {
       start: "top top",
       end: 99999,
       onUpdate: (self) => {
-        if(self.direction === -1) {
-          if(!menuVisible) {
-            setDirection(self.direction)
-            menuAnimation.reverse()
+        if (self.direction === -1) {
+          if (!menuVisible) {
+            setDirection(self.direction);
+            menuAnimation.reverse();
           }
-        }else{
-          if(!menuVisible) {
-            menuAnimation.play()
+        } else {
+          if (!menuVisible) {
+            menuAnimation.play();
           }
         }
       },
@@ -287,17 +296,21 @@ export default function App() {
     <div className="app">
       <header className="app__header" ref={menuRef}>
         <div className="app__header_menuarea">
-          {!menuVisible ? <List
-            className="app__header_menubutton"
-            onClick={() => {
-              setMenuVisible((state) => !state);
-            }}
-          /> : <X
-          className="app__header_menubutton"
-          onClick={() => {
-            setMenuVisible((state) => !state);
-          }}
-        />}
+          {!menuVisible ? (
+            <List
+              className="app__header_menubutton"
+              onClick={() => {
+                setMenuVisible((state) => !state);
+              }}
+            />
+          ) : (
+            <X
+              className="app__header_menubutton"
+              onClick={() => {
+                setMenuVisible((state) => !state);
+              }}
+            />
+          )}
 
           {menuVisible ? (
             <div className="app__header_menu">
@@ -310,12 +323,22 @@ export default function App() {
               </div>
 
               <div className="app__header_menu_githubbutton">
-                <a className="app__header_menu_github" href="https://github.com/dhanielb#README.md" target="_blank" rel="noopener noreferrer">github.com/dhanielb</a>
+                <a
+                  className="app__header_menu_github"
+                  href="https://github.com/dhanielb#README.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/dhanielb
+                </a>
               </div>
 
-              <button onClick={() => {
-                setMenuVisible((state) => !state);
-              }} className="app__header_menu_close"></button>
+              <button
+                onClick={() => {
+                  setMenuVisible((state) => !state);
+                }}
+                className="app__header_menu_close"
+              ></button>
             </div>
           ) : null}
         </div>
@@ -453,8 +476,55 @@ export default function App() {
             experiences that adhere to web standards<br></br> for over a million
             merchants across the world.
           </p>
+
+          <ul>
+            {products.map((product: any) => {
+              const { id, name, description } = product;
+
+              return (
+                <li className="app__section_three__product">
+                  <div
+                    onClick={() => {
+                      handleCheckout(id);
+                    }}
+                  >
+                    <h1 className="app__section_three__product_title">
+                      {name}
+                    </h1>
+                    <p className="app__section_three__product_description">
+                      {description}
+                    </p>
+                    <CaretRight className="app__section_three__product_icon" />
+                  </div>
+
+                  <div
+                    className="app__section_three__product_image"
+                    onClick={() => {
+                      router.push("/images/qrcode");
+                    }}
+                  >
+                    <Image src={require("../images/qrcode.png")} />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </section>
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const stripe = new Stripe(process.env.NEXT_SECRET_STRIPE_KEY || "", {
+    apiVersion: "2022-11-15",
+  });
+
+  const products = await stripe.products.list();
+
+  return {
+    props: {
+      products: products.data,
+    },
+  };
 }
