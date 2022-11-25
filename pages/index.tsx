@@ -482,7 +482,7 @@ export default function App({ products }: { products: any }) {
               const { id, name, description } = product;
 
               return (
-                <li className="app__section_three__product">
+                <li key={id} className="app__section_three__product">
                   <div
                     onClick={() => {
                       handleCheckout(id);
