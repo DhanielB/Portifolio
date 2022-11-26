@@ -23,7 +23,6 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-  user-drag: none;
 }
 
 .app {
@@ -32,7 +31,7 @@
 
 .app__header {
   font-family: "SF-Compact", Arial, sans-serif;
-  @apply flex w-full h-16 fixed z-60 backdrop-blur-xl border-b border-gray-200 border-opacity-30;
+  @apply flex w-screen h-16 fixed z-60 backdrop-blur-xl border-b border-gray-200 border-opacity-30;
 }
 
 .app__header .app__header_menubutton {
@@ -85,11 +84,11 @@
 }
 
 .app__background {
-  @apply flex w-full h-[55rem] md:h-[125%] absolute;
+  @apply flex w-[calc(100%)] h-[55rem] md:h-[125%] absolute;
 }
 
 .app__background svg {
-  @apply z-40 flex w-72 h-72 top-[32.5rem] left-24 md:top-36 md:left-96 absolute;
+  @apply z-40 flex w-[16rem] h-72 top-[32.5rem] left-24 md:top-36 md:left-96 absolute;
 }
 
 .app__main {
@@ -178,31 +177,37 @@
   @apply z-50 text-white text-xs top-[10.5rem] left-16 absolute;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(200, 200, 200);
+  @apply rounded-full
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(150, 150, 150);
+  @apply rounded-full
+}
+
+.app__section_three__products {
+  @apply ml-16 mb-[2rem] w-[24.1rem] overflow-x-auto overflow-y-hidden grid grid-flow-col top-[calc(100%-15%)] md:top-[calc(100%-20%)] absolute 
+}
+
+.app__section_three__products_title {
+  @apply text-primary text-4xl lg:text-5xl font-bold top-[calc(100%-40%)] m-12 absolute;
+}
 .app__section_three__product {
-  @apply bg-white w-[24rem] h-[5rem] rounded-md px-2 py-1 left-[2.5%] top-[calc(100%-15%)] cursor-pointer absolute
+  @apply bg-white w-[24rem] h-[5rem]  mr-[1rem] rounded-md px-2 py-1 left-[2.5%] top-[calc(100%-15%)] cursor-pointer md:top-[calc(100%-20%)]
 }
 
 .app__section_three__product_title {
-  @apply font-bold text-xl
+  font-family: Arial, sans-serif !important;
+  @apply font-bold text-2xl text-gray-800 m-[0.5rem]
 }
 
-.app__section_three__product_description {
-  @apply text-blue-500 px-2
-}
-
-.app__section_three__product_image {
-  width: 5rem;
-  height: 5rem;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 0.15rem;
-  left: 15rem;
-  bottom: 1.5rem;
-  border-color: white;
-  position: absolute;
-}
-.app__section_three__product_icon {
-  @apply w-[2rem] h-[2rem] left-[21.5rem] bottom-[1.5rem] absolute
+.app__section_three__product_price {
+  font-family: "SF-Compact-Bold", Arial, sans-serif;
+  @apply font-bold text-[1.15rem] ml-[15rem] text-gray-500
 }
 
 @media (max-width: 768px) {
