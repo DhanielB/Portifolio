@@ -23,7 +23,7 @@ export default function App({ prices, checkoutUrl }: { prices: any, checkoutUrl:
 
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const stripe = new Stripe(process.env.NEXT_SECRET_STRIPE_KEY || "", {
     apiVersion: "2022-11-15",
   });
