@@ -33,22 +33,9 @@ export async function getServerSideProps() {
     expand: ['data.product']
   });
 
-  const lineItems = [{
-    price: price.id,
-    quantity: 1
-  }]
-
-  const session: Stripe.Checkout.Session = await stripe.checkout.sessions.create({
-    success_url: process.env.SUCESS_URL || '',
-    cancel_url: process.env.CANCEL_URL || '',
-    line_items: lineItems,
-    mode: 'payment'
-  })
-
   return {
     props: {
       prices: prices.data,
-      checkoutUrl: session.url
-    },
+    }
   };
 }
