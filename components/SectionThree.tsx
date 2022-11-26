@@ -5,10 +5,9 @@ import { CaretRight } from "phosphor-react";
 
 export default function SectionThree({
   prices,
-  checkoutUrl,
+  check
 }: {
   prices: any;
-  checkoutUrl: string;
 }) {
   const router = useRouter();
 
@@ -147,7 +146,7 @@ export default function SectionThree({
                 onClick={async () => {
                   const checkoutUrl = await fetch(`/api/checkout/generateCheckout?id=${priceId}`)
 
-                  router.push(checkoutUrl);
+                  router.push(checkoutUrl?.session?.url);
                 }}
               >
                 <h1 className="app__section_three__product_title">{name}</h1>
