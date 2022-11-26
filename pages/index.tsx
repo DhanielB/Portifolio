@@ -33,12 +33,10 @@ export async function getServerSideProps() {
     expand: ['data.product']
   });
 
-  const lineItems = prices.data.map((price: { id: string }) => {
-    return {
-      price: price.id,
-      quantity: 1
-    }
-  })
+  const lineItems = [{
+    price: price.id,
+    quantity: 1
+  }]
 
   const session: Stripe.Checkout.Session = await stripe.checkout.sessions.create({
     success_url: process.env.SUCESS_URL || '',
