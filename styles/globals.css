@@ -190,14 +190,14 @@
 }
 
 .app__section_three__products {
-  @apply ml-16 mb-[2rem] w-[24.1rem] overflow-x-auto overflow-y-hidden grid grid-flow-col top-[calc(100%-15%)] md:top-[calc(100%-20%)] absolute 
+  @apply ml-16 mb-[2rem] w-[20.1rem] overflow-x-auto overflow-y-hidden grid grid-flow-col top-[calc(100%-15%)] md:top-[calc(100%-20%)] absolute 
 }
 
 .app__section_three__products_title {
   @apply text-primary text-4xl lg:text-5xl font-bold top-[calc(100%-40%)] m-12 absolute;
 }
 .app__section_three__product {
-  @apply bg-white w-[24rem] h-[5rem]  mr-[1rem] rounded-md px-2 py-1 left-[2.5%] top-[calc(100%-15%)] cursor-pointer md:top-[calc(100%-20%)]
+  @apply bg-white w-[20rem] h-[5rem]  mr-[1rem] rounded-md px-2 py-1 left-[2.5%] top-[calc(100%-15%)] cursor-pointer md:top-[calc(100%-20%)]
 }
 
 .app__section_three__product_title {
