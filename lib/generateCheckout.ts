@@ -3,6 +3,10 @@ import Stripe from "stripe"
 export default async function generateCheckout(req, res) {
   const { id } = req.query
 
+  const stripe = new Stripe(process.env.NEXT_SECRET_STRIPE_KEY || "", {
+    apiVersion: "2022-11-15",
+  });
+
   const lineItems = [{
     price: id || '',
     quantity: 1
