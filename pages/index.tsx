@@ -6,7 +6,7 @@ import SectionOne from "../components/SectionOne";
 import SectionTwo from "../components/SectionTwo";
 import SectionThree from "../components/SectionThree";
 
-export default function App({ prices, checkoutUrl }: { prices: any, checkoutUrl: string }) {
+export default function App({ prices }: { prices: any }) {
   return (
     <div className="app">
       <Header/>
