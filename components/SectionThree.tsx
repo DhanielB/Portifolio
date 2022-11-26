@@ -4,8 +4,7 @@ import { useEffect, useRef } from "react";
 import { CaretRight } from "phosphor-react";
 
 export default function SectionThree({
-  prices,
-  check
+  prices
 }: {
   prices: any;
 }) {
