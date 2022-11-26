@@ -133,7 +133,7 @@ export default function SectionThree({
 
       <ul className="app__section_three__products">
         {prices.map((price: any) => {
-          const { unit_amount } = price;
+          const { priceId, unit_amount } = price;
           const { id, name, description } = price.product;
 
           const formatter = new Intl.NumberFormat("pt-BR", {
@@ -144,7 +144,9 @@ export default function SectionThree({
           return (
             <li key={id} className="app__section_three__product">
               <div
-                onClick={() => {
+                onClick={async () => {
+                  const checkoutUrl = await fetch(`/api/checkout/generateCheckout?id=${priceId}`)
+
                   router.push(checkoutUrl);
                 }}
               >
