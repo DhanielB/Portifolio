@@ -142,8 +142,10 @@ export default function SectionThree({
           return (
             <li key={id} className="app__section_three__product">
               <div
-                onClick={async () => {
-                  const checkoutUrl = await fetch(`/api/checkout/generateCheckout?id=${priceId}`)
+                onClick={() => {
+                  const checkoutUrl = fetch(`/api/checkout/generateCheckout?id=${priceId}`)
+                    .then((res) => res.json())
+                    .then((data) => data)
 
                   router.push(checkoutUrl?.session?.url);
                 }}
